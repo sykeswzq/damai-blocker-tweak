@@ -14,21 +14,21 @@ jobs:
 
       - name: Install Theos
         run: |
-          git clone --recursive https://github.com/theos/theos.git $HOME/theos
+          export THEOS=$HOME/theos
+          rm -rf "$THEOS"
+          git clone --recursive https://github.com/theos/theos.git "$THEOS"
           brew install libarchive
-          ls $HOME/theos/bin/
+          ls -la "$THEOS/bin/"
 
       - name: Build deb
         working-directory: Packages/com.damai.blocker
-        env:
-          THEOS: $HOME/theos
         run: |
-          set -x
           export THEOS=$HOME/theos
+          set -x
           echo "THEOS=$THEOS"
           ls -la "$THEOS"
-          make clean
-          make package
+          make clean && make package
+          echo "--- packages/ ---"
           ls -la packages/
 
       - name: Upload artifact
