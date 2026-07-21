@@ -1,1 +1,212 @@
-LyoKICogRGFtYWlCbG9ja2VyIC0gYnlwYXNzIGphaWxicmVhayBkZXRlY3Rpb24gZm9yIOWkp+m6piAoY24uZGFtYWkuaXBob25lKQogKiBUYXJnZXQ6IGlPUyAxNi41ICsgRG9wYW1pbmUgUm9vdGxlc3MgKyBFbGxlS2l0CiAqIERldmljZTogaVBob25lIDE0IFBybyAoYXJtNjRlKQogKi8KCiNpbXBvcnQgPEZvdW5kYXRpb24vRm91bmRhdGlvbi5oPgojaW1wb3J0IDxVSUtpdC9VSUtpdC5oPgojaW1wb3J0IDxkbGZjbi5oPgojaW1wb3J0IDxzeXMvc3RhdC5oPgojaW1wb3J0IDx1bmlzdGQuaD4KI2ltcG9ydCA8c3RyaW5ncy5oPgojaW1wb3J0IDxlcnJuby5oPgoKc3RhdGljIGludCBkYW1faXNfamIoY29uc3QgY2hhciAqcCkgewogICAgaWYgKCFwKSByZXR1cm4gMDsKICAgIGNvbnN0IGNoYXIgKmpbXSA9IHsKICAgICAgICAiL3Zhci9qYiIsICIvTGlicmFyeS9Nb2JpbGVTdWJzdHJhdGUiLAogICAgICAgICIvQXBwbGljYXRpb25zL0N5ZGlhLmFwcCIsICIvQXBwbGljYXRpb25zL1NpbGVvLmFwcCIsCiAgICAgICAgIi9BcHBsaWNhdGlvbnMvRmlsemEuYXBwIiwgIi9wcml2YXRlL3Zhci9saWIvYXB0LyIsCiAgICAgICAgIi9wcml2YXRlL3Zhci9zdGFzaCIsICIvZXRjL2FwdCIsICIvYmluL2Jhc2giLAogICAgICAgICIvYmluL3NoIiwgIi91c3IvYmluL3N1IiwgIi91c3Ivc2Jpbi9zc2hkIiwKICAgICAgICAiL3Vzci9iaW4vc3NoIiwgIi91c3IvbGliL2xpYnN1YnN0aXR1dGUuZHlsaWIiLAogICAgICAgICIvdXNyL2xpYi9saWJzdWJzdHJhdGUuZHlsaWIiLCAiL0xpYnJhcnkvUHJlZmVyZW5jZUxvYWRlciIsCiAgICAgICAgIi9MaWJyYXJ5L01vYmlsZVN1YnN0cmF0ZS9Nb2JpbGVTdWJzdHJhdGUuZHlsaWIiLAogICAgICAgICIvdmFyL2piL0xpYnJhcnkvTW9iaWxlU3Vic3RyYXRlL0R5bmFtaWNMaWJyYXJpZXMiLAogICAgICAgICIvdmFyL2piL2V0Yy9hcHQiLAogICAgfTsKICAgIGZvciAoaW50IGkgPSAwOyBpIDwgKGludCkoc2l6ZW9mKGopL3NpemVvZihqWzBdKSk7IGkrKykgewogICAgICAgIGlmIChzdHJzdHIocCwgaltpXSkpIHJldHVybiAxOwogICAgfQogICAgcmV0dXJuIDA7Cn0KCiVob29rIHN0YXQKaW50IHN0YXQoY29uc3QgY2hhciAqcGF0aG5hbWUsIHN0cnVjdCBzdGF0ICpidWYpIHsKICAgIGlmIChkYW1faXNfamIocGF0aG5hbWUpKSB7IGVycm5vID0gRU5PRU5UOyByZXR1cm4gLTE7IH0KICAgIHJldHVybiAlb3JpZzsKfQolZW5kCgolaG9vayBsc3RhdAppbnQgbHN0YXQoY29uc3QgY2hhciAqcGF0aG5hbWUsIHN0cnVjdCBzdGF0ICpidWYpIHsKICAgIGlmIChkYW1faXNfamIocGF0aG5hbWUpKSB7IGVycm5vID0gRU5PRU5UOyByZXR1cm4gLTE7IH0KICAgIHJldHVybiAlb3JpZzsKfQolZW5kCgolaG9vayBhY2Nlc3MKaW50IGFjY2Vzcyhjb25zdCBjaGFyICpwYXRobmFtZSwgaW50IG1vZGUpIHsKICAgIGlmIChkYW1faXNfamIocGF0aG5hbWUpKSByZXR1cm4gLTE7CiAgICByZXR1cm4gJW9yaWc7Cn0KJWVuZAoKJWhvb2sgZmFjY2Vzc2F0CmludCBmYWNjZXNzYXQoaW50IGRpcmZkLCBjb25zdCBjaGFyICpwYXRobmFtZSwgaW50IG1vZGUsIGludCBmbGFncykgewogICAgaWYgKGRhbV9pc19qYihwYXRobmFtZSkpIHJldHVybiAtMTsKICAgIHJldHVybiAlb3JpZzsKfQolZW5kCgolaG9vayBvcGVuCmludCBvcGVuKGNvbnN0IGNoYXIgKnBhdGhuYW1lLCBpbnQgZmxhZ3MsIC4uLikgewogICAgaWYgKGRhbV9pc19qYihwYXRobmFtZSkpIHsgZXJybm8gPSBFTk9FTlQ7IHJldHVybiAtMTsgfQogICAgcmV0dXJuICVvcmlnOwp9CiVlbmQKCiVob29rIG9wZW5hdAppbnQgb3BlbmF0KGludCBkaXJmZCwgY29uc3QgY2hhciAqcGF0aG5hbWUsIGludCBmbGFncywgLi4uKSB7CiAgICBpZiAoZGFtX2lzX2piKHBhdGhuYW1lKSkgeyBlcnJubyA9IEVOT0VOVDsgcmV0dXJuIC0xOyB9CiAgICByZXR1cm4gJW9yaWc7Cn0KJWVuZAoKJWhvb2sgZm9wZW4KRklMRSAqZm9wZW4oY29uc3QgY2hhciAqZmlsZW5hbWUsIGNvbnN0IGNoYXIgKm1vZGUpIHsKICAgIGlmIChkYW1faXNfamIoZmlsZW5hbWUpKSB7IGVycm5vID0gRU5PRU5UOyByZXR1cm4gTlVMTDsgfQogICAgcmV0dXJuICVvcmlnOwp9CiVlbmQKCiVob29rIGZvcGVuNjQKRklMRSAqZm9wZW42NChjb25zdCBjaGFyICpmaWxlbmFtZSwgY29uc3QgY2hhciAqbW9kZSkgewogICAgaWYgKGRhbV9pc19qYihmaWxlbmFtZSkpIHsgZXJybm8gPSBFTk9FTlQ7IHJldHVybiBOVUxMOyB9CiAgICByZXR1cm4gJW9yaWc7Cn0KJWVuZAoKJWhvb2sgcmVhZGxpbmsKc3NpemVfdCByZWFkbGluayhjb25zdCBjaGFyICpwYXRobmFtZSwgY2hhciAqYnVmLCBzaXplX3QgYnVmc2l6ZSkgewogICAgaWYgKGRhbV9pc19qYihwYXRobmFtZSkpIHsgZXJybm8gPSBFTk9FTlQ7IHJldHVybiAtMTsgfQogICAgcmV0dXJuICVvcmlnOwp9CiVlbmQKCiVob29rIGRsb3Blbgp2b2lkICpkbG9wZW4oY29uc3QgY2hhciAqcGF0aCwgaW50IG1vZGUpIHsKICAgIGlmIChkYW1faXNfamIocGF0aCkpIHsgZXJybm8gPSBFTk9FTlQ7IHJldHVybiBOVUxMOyB9CiAgICByZXR1cm4gJW9yaWc7Cn0KJWVuZAoKJWhvb2sgZ2V0ZW52CmNoYXIgKmdldGVudihjb25zdCBjaGFyICpuYW1lKSB7CiAgICBpZiAoc3RyY21wKG5hbWUsICJEWUxEX0lOU0VSVF9MSUJSQVJJRVMiKSA9PSAwIHx8CiAgICAgICAgc3RyY21wKG5hbWUsICJEWUxEX0xJQlJBUllfUEFUSCIpID09IDAgfHwKICAgICAgICBzdHJjbXAobmFtZSwgIkRZTERfRkFMTEJBQ0tfTElCUkFSWV9QQVRIIikgPT0gMCB8fAogICAgICAgIHN0cmNtcChuYW1lLCAiRFlMRF9GUkFNRVdPUktfUEFUSCIpID09IDAgfHwKICAgICAgICBzdHJjbXAobmFtZSwgIlNVQkxJQlJBUllQQVRIIikgPT0gMCB8fAogICAgICAgIHN0cmNtcChuYW1lLCAiTW9iaWxlU3Vic3RyYXRlRW5hYmxlUGF0aCIpID09IDAgfHwKICAgICAgICBzdHJjbXAobmFtZSwgIkN5ZGlhU3Vic3RyYXRlRW5hYmxlZCIpID09IDAgfHwKICAgICAgICBzdHJjbXAobmFtZSwgIkVsbGVLaXRWZXJzaW9uIikgPT0gMCB8fAogICAgICAgIHN0cmNtcChuYW1lLCAiU3Vic3RpdHV0ZVZlcnNpb24iKSA9PSAwKSB7CiAgICAgICAgcmV0dXJuIE5VTEw7CiAgICB9CiAgICByZXR1cm4gJW9yaWc7Cn0KJWVuZAoKJWhvb2sgcHV0ZW52CmludCBwdXRlbnYoY2hhciAqc3RyaW5nKSB7CiAgICBpZiAoc3RyaW5nICYmIHN0cm5jbXAoc3RyaW5nLCAiRFlMRF8iLCA1KSA9PSAwKSByZXR1cm4gMDsKICAgIGlmIChzdHJpbmcgJiYgc3RybmNtcChzdHJpbmcsICJTVUJMSUJSQVJZUEFUSD0iLCAxNCkgPT0gMCkgcmV0dXJuIDA7CiAgICByZXR1cm4gJW9yaWc7Cn0KJWVuZAoKJWhvb2sgTlNGaWxlTWFuYWdlcgoKLSAoQk9PTClmaWxlRXhpc3RzQXRQYXRoOihOU1N0cmluZyAqKXBhdGggewogICAgaWYgKGRhbV9pc19qYihbcGF0aCBVVEY4U3RyaW5nXSkpIHJldHVybiBOTzsKICAgIHJldHVybiAlb3JpZzsKfQoKLSAoQk9PTClmaWxlRXhpc3RzQXRQYXRoOihOU1N0cmluZyAqKXBhdGggaXNEaXJlY3Rvcnk6KEJPT0wgKilpc0RpciB7CiAgICBpZiAoZGFtX2lzX2piKFtwYXRoIFVURjhTdHJpbmddKSkgcmV0dXJuIE5POwogICAgcmV0dXJuICVvcmlnOwp9CgotIChCT09MKWlzUmVhZGFibGVGaWxlQXRQYXRoOihOU1N0cmluZyAqKXBhdGggewogICAgaWYgKGRhbV9pc19qYihbcGF0aCBVVEY4U3RyaW5nXSkpIHJldHVybiBOTzsKICAgIHJldHVybiAlb3JpZzsKfQoKLSAoQk9PTClpc1dyaXRhYmxlRmlsZUF0UGF0aDooTlNTdHJpbmcgKilwYXRoIHsKICAgIGlmIChkYW1faXNfamIoW3BhdGggVVRGOFN0cmluZ10pKSByZXR1cm4gTk87CiAgICByZXR1cm4gJW9yaWc7Cn0KCi0gKE5TQXJyYXk8TlNTdHJpbmcgKj4gKiljb250ZW50c09mRGlyZWN0b3J5QXRQYXRoOihOU1N0cmluZyAqKXBhdGggZXJyb3I6KE5TRXJyb3IgKiopZXJyb3IgewogICAgaWYgKGRhbV9pc19qYihbcGF0aCBVVEY4U3RyaW5nXSkpIHJldHVybiBAW107CiAgICByZXR1cm4gJW9yaWc7Cn0KJWVuZAoKJWhvb2sgTlNCdW5kbGUKCisgKE5TQnVuZGxlICopYnVuZGxlV2l0aFBhdGg6KE5TU3RyaW5nICopcGF0aCB7CiAgICBpZiAoZGFtX2lzX2piKFtwYXRoIFVURjhTdHJpbmddKSkgcmV0dXJuIG5pbDsKICAgIHJldHVybiAlb3JpZzsKfQoKKyAoTlNCdW5kbGUgKilidW5kbGVGb3JDbGFzczooQ2xhc3MpYUNsYXNzIHsKICAgIE5TQnVuZGxlICpiID0gJW9yaWc7CiAgICBpZiAoYiAmJiBbW2IgYnVuZGxlUGF0aF0gaGFzUHJlZml4OkAiL3Zhci9qYiJdKSByZXR1cm4gbmlsOwogICAgcmV0dXJuIGI7Cn0KJWVuZAoKJWhvb2sgVUlBcHBsaWNhdGlvbgoKLSAoQk9PTCljYW5PcGVuVVJMOihOU1VSTCAqKXVybCB7CiAgICBOU1N0cmluZyAqcyA9IHVybC5zY2hlbWUgPyBbdXJsLnNjaGVtZSBsb3dlcmNhc2VTdHJpbmddIDogQCIiOwogICAgTlNBcnJheSAqYmxvY2tlZCA9IEBbIEAiY3lkaWEiLCBAInNpbGVvIiwgQCJ6aWJyYSIsIEAiZmlsemEiLCBAInNic2V0dGluZ3MiLCBAImR1Y2siLCBAImluc3RhbGxpb24iLCBAImlmaWxlIiBdOwogICAgZm9yIChOU1N0cmluZyAqYiBpbiBibG9ja2VkKSB7CiAgICAgICAgaWYgKFtzIGlzRXF1YWxUb1N0cmluZzpiXSkgcmV0dXJuIE5POwogICAgfQogICAgcmV0dXJuICVvcmlnOwp9CgotIChCT09MKW9wZW5VUkw6KE5TVVJMICopdXJsIG9wdGlvbnM6KE5TRGljdGlvbmFyeTxVSUFwcGxpY2F0aW9uT3BlblVSTE9wdGlvbnNLZXksaWQ+ICopb3B0aW9ucyBjb21wbGV0aW9uSGFuZGxlcjoodm9pZCAoXikoQk9PTCkpY29tcGxldGlvbkhhbmRsZXIgewogICAgTlNTdHJpbmcgKnMgPSB1cmwuc2NoZW1lID8gW3VybC5zY2hlbWUgbG93ZXJjYXNlU3RyaW5nXSA6IEAiIjsKICAgIE5TQXJyYXkgKmJsb2NrZWQgPSBAWyBAImN5ZGlhIiwgQCJzaWxlbyIsIEAiemlicmEiLCBAImZpbHphIiwgQCJzYnNldHRpbmdzIiwgQCJkdWNrIiwgQCJpbnN0YWxsaW9uIiwgQCJpZmlsZSIgXTsKICAgIGZvciAoTlNTdHJpbmcgKmIgaW4gYmxvY2tlZCkgewogICAgICAgIGlmIChbcyBpc0VxdWFsVG9TdHJpbmc6Yl0pIHsKICAgICAgICAgICAgTlNMb2coQCJbRGFtYWlCbG9ja2VyXSBCbG9ja2VkIFVSTDogJUAiLCB1cmwpOwogICAgICAgICAgICBpZiAoY29tcGxldGlvbkhhbmRsZXIpIGNvbXBsZXRpb25IYW5kbGVyKE5PKTsKICAgICAgICAgICAgcmV0dXJuIFlFUzsKICAgICAgICB9CiAgICB9CiAgICByZXR1cm4gJW9yaWc7Cn0KCi0gKEJPT0wpb3BlblVSTDooTlNVUkwgKil1cmwgewogICAgTlNTdHJpbmcgKnMgPSB1cmwuc2NoZW1lID8gW3VybC5zY2hlbWUgbG93ZXJjYXNlU3RyaW5nXSA6IEAiIjsKICAgIE5TQXJyYXkgKmJsb2NrZWQgPSBAWyBAImN5ZGlhIiwgQCJzaWxlbyIsIEAiemlicmEiLCBAImZpbHphIiwgQCJzYnNldHRpbmdzIiwgQCJkdWNrIiwgQCJpbnN0YWxsaW9uIiwgQCJpZmlsZSIgXTsKICAgIGZvciAoTlNTdHJpbmcgKmIgaW4gYmxvY2tlZCkgewogICAgICAgIGlmIChbcyBpc0VxdWFsVG9TdHJpbmc6Yl0pIHsKICAgICAgICAgICAgTlNMb2coQCJbRGFtYWlCbG9ja2VyXSBCbG9ja2VkIFVSTDogJUAiLCB1cmwpOwogICAgICAgICAgICByZXR1cm4gTk87CiAgICAgICAgfQogICAgfQogICAgcmV0dXJuICVvcmlnOwp9CiVlbmQKCiVjdG9yIHsKICAgIHByaW50ZigiW0RhbWFpQmxvY2tlcl0gVHdlYWsgbG9hZGVkIHN1Y2Nlc3NmdWxseVxuIik7CiAgICBOU0xvZyhAIltEYW1haUJsb2NrZXJdIExvYWRlZCBmb3IgYnVuZGxlOiBjbi5kYW1haS5pcGhvbmUiKTsKfQo=
+/*
+ * DamaiBlocker - bypass jailbreak detection for 大麦 (cn.damai.iphone)
+ * Target: iOS 16.5 + Dopamine Rootless + ElleKit
+ * Device: iPhone 14 Pro (arm64e)
+ */
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <dlfcn.h>
+#import <sys/stat.h>
+#import <unistd.h>
+#import <strings.h>
+#import <errno.h>
+
+static int dam_is_jb(const char *p) {
+    if (!p) return 0;
+    const char *j[] = {
+        "/var/jb", "/Library/MobileSubstrate",
+        "/Applications/Cydia.app", "/Applications/Sileo.app",
+        "/Applications/Filza.app", "/private/var/lib/apt/",
+        "/private/var/stash", "/etc/apt", "/bin/bash",
+        "/bin/sh", "/usr/bin/su", "/usr/sbin/sshd",
+        "/usr/bin/ssh", "/usr/lib/libsubstitute.dylib",
+        "/usr/lib/libsubstrate.dylib", "/Library/PreferenceLoader",
+        "/Library/MobileSubstrate/MobileSubstrate.dylib",
+        "/var/jb/Library/MobileSubstrate/DynamicLibraries",
+        "/var/jb/etc/apt",
+    };
+    for (int i = 0; i < (int)(sizeof(j)/sizeof(j[0])); i++) {
+        if (strstr(p, j[i])) return 1;
+    }
+    return 0;
+}
+
+%hook stat
+int stat(const char *pathname, struct stat *buf) {
+    if (dam_is_jb(pathname)) { errno = ENOENT; return -1; }
+    return %orig;
+}
+%end
+
+%hook lstat
+int lstat(const char *pathname, struct stat *buf) {
+    if (dam_is_jb(pathname)) { errno = ENOENT; return -1; }
+    return %orig;
+}
+%end
+
+%hook access
+int access(const char *pathname, int mode) {
+    if (dam_is_jb(pathname)) return -1;
+    return %orig;
+}
+%end
+
+%hook faccessat
+int faccessat(int dirfd, const char *pathname, int mode, int flags) {
+    if (dam_is_jb(pathname)) return -1;
+    return %orig;
+}
+%end
+
+%hook open
+int open(const char *pathname, int flags, ...) {
+    if (dam_is_jb(pathname)) { errno = ENOENT; return -1; }
+    return %orig;
+}
+%end
+
+%hook openat
+int openat(int dirfd, const char *pathname, int flags, ...) {
+    if (dam_is_jb(pathname)) { errno = ENOENT; return -1; }
+    return %orig;
+}
+%end
+
+%hook fopen
+FILE *fopen(const char *filename, const char *mode) {
+    if (dam_is_jb(filename)) { errno = ENOENT; return NULL; }
+    return %orig;
+}
+%end
+
+%hook fopen64
+FILE *fopen64(const char *filename, const char *mode) {
+    if (dam_is_jb(filename)) { errno = ENOENT; return NULL; }
+    return %orig;
+}
+%end
+
+%hook readlink
+ssize_t readlink(const char *pathname, char *buf, size_t bufsize) {
+    if (dam_is_jb(pathname)) { errno = ENOENT; return -1; }
+    return %orig;
+}
+%end
+
+%hook dlopen
+void *dlopen(const char *path, int mode) {
+    if (dam_is_jb(path)) { errno = ENOENT; return NULL; }
+    return %orig;
+}
+%end
+
+%hook getenv
+char *getenv(const char *name) {
+    if (strcmp(name, "DYLD_INSERT_LIBRARIES") == 0 ||
+        strcmp(name, "DYLD_LIBRARY_PATH") == 0 ||
+        strcmp(name, "DYLD_FALLBACK_LIBRARY_PATH") == 0 ||
+        strcmp(name, "DYLD_FRAMEWORK_PATH") == 0 ||
+        strcmp(name, "SUBLIBRARYPATH") == 0 ||
+        strcmp(name, "MobileSubstrateEnablePath") == 0 ||
+        strcmp(name, "CydiaSubstrateEnabled") == 0 ||
+        strcmp(name, "ElleKitVersion") == 0 ||
+        strcmp(name, "SubstituteVersion") == 0) {
+        return NULL;
+    }
+    return %orig;
+}
+%end
+
+%hook putenv
+int putenv(char *string) {
+    if (string && strncmp(string, "DYLD_", 5) == 0) return 0;
+    if (string && strncmp(string, "SUBLIBRARYPATH=", 14) == 0) return 0;
+    return %orig;
+}
+%end
+
+%hook NSFileManager
+
+- (BOOL)fileExistsAtPath:(NSString *)path {
+    if (dam_is_jb([path UTF8String])) return NO;
+    return %orig;
+}
+
+- (BOOL)fileExistsAtPath:(NSString *)path isDirectory:(BOOL *)isDir {
+    if (dam_is_jb([path UTF8String])) return NO;
+    return %orig;
+}
+
+- (BOOL)isReadableFileAtPath:(NSString *)path {
+    if (dam_is_jb([path UTF8String])) return NO;
+    return %orig;
+}
+
+- (BOOL)isWritableFileAtPath:(NSString *)path {
+    if (dam_is_jb([path UTF8String])) return NO;
+    return %orig;
+}
+
+- (NSArray<NSString *> *)contentsOfDirectoryAtPath:(NSString *)path error:(NSError **)error {
+    if (dam_is_jb([path UTF8String])) return @[];
+    return %orig;
+}
+%end
+
+%hook NSBundle
+
++ (NSBundle *)bundleWithPath:(NSString *)path {
+    if (dam_is_jb([path UTF8String])) return nil;
+    return %orig;
+}
+
++ (NSBundle *)bundleForClass:(Class)aClass {
+    NSBundle *b = %orig;
+    if (b && [[b bundlePath] hasPrefix:@"/var/jb"]) return nil;
+    return b;
+}
+%end
+
+%hook UIApplication
+
+- (BOOL)canOpenURL:(NSURL *)url {
+    NSString *s = url.scheme ? [url.scheme lowercaseString] : @"";
+    NSArray *blocked = @[ @"cydia", @"sileo", @"zibra", @"filza", @"sbsettings", @"duck", @"installion", @"ifile" ];
+    for (NSString *b in blocked) {
+        if ([s isEqualToString:b]) return NO;
+    }
+    return %orig;
+}
+
+- (BOOL)openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options completionHandler:(void (^)(BOOL))completionHandler {
+    NSString *s = url.scheme ? [url.scheme lowercaseString] : @"";
+    NSArray *blocked = @[ @"cydia", @"sileo", @"zibra", @"filza", @"sbsettings", @"duck", @"installion", @"ifile" ];
+    for (NSString *b in blocked) {
+        if ([s isEqualToString:b]) {
+            NSLog(@"[DamaiBlocker] Blocked URL: %@", url);
+            if (completionHandler) completionHandler(NO);
+            return YES;
+        }
+    }
+    return %orig;
+}
+
+- (BOOL)openURL:(NSURL *)url {
+    NSString *s = url.scheme ? [url.scheme lowercaseString] : @"";
+    NSArray *blocked = @[ @"cydia", @"sileo", @"zibra", @"filza", @"sbsettings", @"duck", @"installion", @"ifile" ];
+    for (NSString *b in blocked) {
+        if ([s isEqualToString:b]) {
+            NSLog(@"[DamaiBlocker] Blocked URL: %@", url);
+            return NO;
+        }
+    }
+    return %orig;
+}
+%end
+
+%ctor {
+    printf("[DamaiBlocker] Tweak loaded successfully\n");
+    NSLog(@"[DamaiBlocker] Loaded for bundle: cn.damai.iphone");
+}
