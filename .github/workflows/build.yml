@@ -5,24 +5,29 @@ on:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: macos-14
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
           clean: true
+          persist-credentials: false
 
       - name: Fix line endings and debug
+        working-directory: Packages/com.damai.blocker
         run: |
-          python3 -c "import pathlib; [pathlib.Path(p).write_bytes(pathlib.Path(p).read_bytes().replace(b'\r\n', b'\n')) for p in ['Makefile','Tweak.x','.gitignore']]"
-          cat -A Packages/com.damai.blocker/Makefile | head -15
-          xxd Packages/com.damai.blocker/Makefile | head -40
+          python3 -c "import pathlib; [pathlib.Path(p).write_bytes(pathlib.Path(p).read_bytes().replace(b'\r', b'')) for p in ['Makefile','Tweak.x','.gitignore']]"
+          echo "=== cat -A Makefile ==="
+          cat -A Makefile
+          echo "=== hexdump Makefile ==="
+          xxd Makefile | head -40
 
       - name: Install Theos and tools
         run: |
           git clone --recursive https://github.com/theos/theos.git $HOME/theos
           brew install ldid
+          ls $HOME/theos/bin/
 
       - name: Build deb
         working-directory: Packages/com.damai.blocker
@@ -32,13 +37,15 @@ jobs:
         run: |
           export THEOS=$HOME/theos
           export THEOS_MAKE_PATH=$HOME/theos/makefiles
-          echo "PWD=$PWD"
-          echo "THEOS=$THEOS"
-          echo "THEOS_MAKE_PATH=$THEOS_MAKE_PATH"
+          echo "=== Environment ==="
+          echo PWD=$PWD
+          echo THEOS=$THEOS
+          echo THEOS_MAKE_PATH=$THEOS_MAKE_PATH
+          echo "=== Check Makefile ==="
           cat -A Makefile
           xxd Makefile | head -40
           make clean && make package
-          ls -la packages/ || echo "NO packages dir"
+          ls -la packages/ || echo "No packages dir!"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
