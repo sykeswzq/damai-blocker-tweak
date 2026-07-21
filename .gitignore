@@ -1,0 +1,5 @@
+packages/*.deb
+packages/*.ipk
+packages/*.tar.gz
+Makefile.shh
+.theos/
