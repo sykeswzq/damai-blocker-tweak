@@ -1,1 +1,39 @@
-bmFtZTogQnVpbGQgRGFtYWlCbG9ja2VyCgpvbjoKICB3b3JrZmxvd19kaXNwYXRjaDoKCmpvYnM6CiAgYnVpbGQ6CiAgICBydW5zLW9uOiBtYWNvcy1sYXRlc3QKICAgIHN0ZXBzOgogICAgICAtIG5hbWU6IENoZWNrb3V0CiAgICAgICAgdXNlczogYWN0aW9ucy9jaGVja291dEB2NAogICAgICAgIHdpdGg6CiAgICAgICAgICBzdWJtb2R1bGVzOiByZWN1cnNpdmUKCiAgICAgIC0gbmFtZTogSW5zdGFsbCBUaGVvcwogICAgICAgIHJ1bjogfAogICAgICAgICAgZXhwb3J0IFRIRU9TPSRIT01FL3RoZW9zCiAgICAgICAgICBybSAtcmYgIiRUSEVPUyIKICAgICAgICAgIGdpdCBjbG9uZSAtLXJlY3Vyc2l2ZSBodHRwczovL2dpdGh1Yi5jb20vdGhlb3MvdGhlb3MuZ2l0ICIkVEhFT1MiCiAgICAgICAgICBicmV3IGluc3RhbGwgbGliYXJjaGl2ZQogICAgICAgICAgbHMgLWxhICIkVEhFT1MvYmluLyIKCiAgICAgIC0gbmFtZTogQnVpbGQgZGViCiAgICAgICAgd29ya2luZy1kaXJlY3Rvcnk6IFBhY2thZ2VzL2NvbS5kYW1haS5ibG9ja2VyCiAgICAgICAgcnVuOiB8CiAgICAgICAgICBleHBvcnQgVEhFT1M9JEhPTUUvdGhlb3MKICAgICAgICAgIHNldCAteAogICAgICAgICAgZWNobyAiVEhFT1M9JFRIRU9TIgogICAgICAgICAgbHMgLWxhICIkVEhFT1MiCiAgICAgICAgICBtYWtlIGNsZWFuICYmIG1ha2UgcGFja2FnZQogICAgICAgICAgZWNobyAiLS0tIHBhY2thZ2VzLyAtLS0iCiAgICAgICAgICBscyAtbGEgcGFja2FnZXMvCgogICAgICAtIG5hbWU6IFVwbG9hZCBhcnRpZmFjdAogICAgICAgIHVzZXM6IGFjdGlvbnMvdXBsb2FkLWFydGlmYWN0QHY0CiAgICAgICAgd2l0aDoKICAgICAgICAgIG5hbWU6IERhbWFpQmxvY2tlci5kZWIKICAgICAgICAgIHBhdGg6IFBhY2thZ2VzL2NvbS5kYW1haS5ibG9ja2VyL3BhY2thZ2VzLyouZGViCiAgICAgICAgICBpZi1uby1maWxlcy1mb3VuZDogZXJyb3IK
+name: Build DamaiBlocker
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install Theos
+        run: |
+          git clone --recursive https://github.com/theos/theos.git $HOME/theos
+          brew install libarchive
+          ls $HOME/theos/bin/
+
+      - name: Build deb
+        working-directory: Packages/com.damai.blocker
+        env:
+          THEOS: $HOME/theos
+        run: |
+          set -x
+          export THEOS=$HOME/theos
+          echo "THEOS=$THEOS"
+          ls -la "$THEOS"
+          make clean
+          make package
+          ls -la packages/
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: DamaiBlocker.deb
+          path: Packages/com.damai.blocker/packages/*.deb
+          if-no-files-found: error
