@@ -11,6 +11,8 @@
 #import <unistd.h>
 #import <strings.h>
 #import <errno.h>
+#import <fcntl.h>
+#import <stdarg.h>
 
 static int dam_is_jb(const char *p) {
     if (!p) return 0;
@@ -32,78 +34,123 @@ static int dam_is_jb(const char *p) {
     return 0;
 }
 
-%hook stat
+#pragma mark - C function hooks via dlsym
+
+typedef int (*real_stat_t)(const char *, struct stat *);
+typedef int (*real_lstat_t)(const char *, struct stat *);
+typedef int (*real_access_t)(const char *, int);
+typedef int (*real_faccessat_t)(int, const char *, int, int);
+typedef int (*real_open_t)(const char *, int, ...);
+typedef int (*real_openat_t)(int, const char *, int, ...);
+typedef FILE *(*real_fopen_t)(const char *, const char *);
+typedef FILE *(*real_fopen64_t)(const char *, const char *);
+typedef ssize_t (*real_readlink_t)(const char *, char *, size_t);
+typedef void *(*real_dlopen_t)(const char *, int);
+typedef char *(*real_getenv_t)(const char *);
+typedef int (*real_putenv_t)(char *);
+
+static real_stat_t      orig_stat = NULL;
+static real_lstat_t     orig_lstat = NULL;
+static real_access_t    orig_access = NULL;
+static real_faccessat_t orig_faccessat = NULL;
+static real_open_t      orig_open = NULL;
+static real_openat_t    orig_openat = NULL;
+static real_fopen_t     orig_fopen = NULL;
+static real_fopen64_t   orig_fopen64 = NULL;
+static real_readlink_t  orig_readlink = NULL;
+static real_dlopen_t    orig_dlopen = NULL;
+static real_getenv_t    orig_getenv = NULL;
+static real_putenv_t    orig_putenv = NULL;
+
+static void ensure_orig(void) {
+    if (orig_stat == NULL)  orig_stat = (real_stat_t)dlsym(RTLD_NEXT, "stat");
+    if (orig_lstat == NULL) orig_lstat = (real_lstat_t)dlsym(RTLD_NEXT, "lstat");
+    if (orig_access == NULL) orig_access = (real_access_t)dlsym(RTLD_NEXT, "access");
+    if (orig_faccessat == NULL) orig_faccessat = (real_faccessat_t)dlsym(RTLD_NEXT, "faccessat");
+    if (orig_open == NULL)  orig_open = (real_open_t)dlsym(RTLD_NEXT, "open");
+    if (orig_openat == NULL) orig_openat = (real_openat_t)dlsym(RTLD_NEXT, "openat");
+    if (orig_fopen == NULL) orig_fopen = (real_fopen_t)dlsym(RTLD_NEXT, "fopen");
+    if (orig_fopen64 == NULL) orig_fopen64 = (real_fopen64_t)dlsym(RTLD_NEXT, "fopen64");
+    if (orig_readlink == NULL) orig_readlink = (real_readlink_t)dlsym(RTLD_NEXT, "readlink");
+    if (orig_dlopen == NULL) orig_dlopen = (real_dlopen_t)dlsym(RTLD_NEXT, "dlopen");
+    if (orig_getenv == NULL) orig_getenv = (real_getenv_t)dlsym(RTLD_NEXT, "getenv");
+    if (orig_putenv == NULL) orig_putenv = (real_putenv_t)dlsym(RTLD_NEXT, "putenv");
+}
+
 int stat(const char *pathname, struct stat *buf) {
+    ensure_orig();
     if (dam_is_jb(pathname)) { errno = ENOENT; return -1; }
-    return %orig;
+    return orig_stat(pathname, buf);
 }
-%end
 
-%hook lstat
 int lstat(const char *pathname, struct stat *buf) {
+    ensure_orig();
     if (dam_is_jb(pathname)) { errno = ENOENT; return -1; }
-    return %orig;
+    return orig_lstat(pathname, buf);
 }
-%end
 
-%hook access
 int access(const char *pathname, int mode) {
+    ensure_orig();
     if (dam_is_jb(pathname)) return -1;
-    return %orig;
+    return orig_access(pathname, mode);
 }
-%end
 
-%hook faccessat
 int faccessat(int dirfd, const char *pathname, int mode, int flags) {
+    ensure_orig();
     if (dam_is_jb(pathname)) return -1;
-    return %orig;
+    return orig_faccessat(dirfd, pathname, mode, flags);
 }
-%end
 
-%hook open
 int open(const char *pathname, int flags, ...) {
+    ensure_orig();
     if (dam_is_jb(pathname)) { errno = ENOENT; return -1; }
-    return %orig;
+    mode_t m = 0;
+    if (flags & O_CREAT) {
+        va_list ap; va_start(ap, flags);
+        m = (mode_t)va_arg(ap, int);
+        va_end(ap);
+    }
+    return orig_open(pathname, flags, m);
 }
-%end
 
-%hook openat
 int openat(int dirfd, const char *pathname, int flags, ...) {
+    ensure_orig();
     if (dam_is_jb(pathname)) { errno = ENOENT; return -1; }
-    return %orig;
+    mode_t m = 0;
+    if (flags & O_CREAT) {
+        va_list ap; va_start(ap, flags);
+        m = (mode_t)va_arg(ap, int);
+        va_end(ap);
+    }
+    return orig_openat(dirfd, pathname, flags, m);
 }
-%end
 
-%hook fopen
 FILE *fopen(const char *filename, const char *mode) {
+    ensure_orig();
     if (dam_is_jb(filename)) { errno = ENOENT; return NULL; }
-    return %orig;
+    return orig_fopen(filename, mode);
 }
-%end
 
-%hook fopen64
 FILE *fopen64(const char *filename, const char *mode) {
+    ensure_orig();
     if (dam_is_jb(filename)) { errno = ENOENT; return NULL; }
-    return %orig;
+    return orig_fopen64(filename, mode);
 }
-%end
 
-%hook readlink
 ssize_t readlink(const char *pathname, char *buf, size_t bufsize) {
+    ensure_orig();
     if (dam_is_jb(pathname)) { errno = ENOENT; return -1; }
-    return %orig;
+    return orig_readlink(pathname, buf, bufsize);
 }
-%end
 
-%hook dlopen
 void *dlopen(const char *path, int mode) {
+    ensure_orig();
     if (dam_is_jb(path)) { errno = ENOENT; return NULL; }
-    return %orig;
+    return orig_dlopen(path, mode);
 }
-%end
 
-%hook getenv
 char *getenv(const char *name) {
+    ensure_orig();
     if (strcmp(name, "DYLD_INSERT_LIBRARIES") == 0 ||
         strcmp(name, "DYLD_LIBRARY_PATH") == 0 ||
         strcmp(name, "DYLD_FALLBACK_LIBRARY_PATH") == 0 ||
@@ -115,17 +162,17 @@ char *getenv(const char *name) {
         strcmp(name, "SubstituteVersion") == 0) {
         return NULL;
     }
-    return %orig;
+    return orig_getenv(name);
 }
-%end
 
-%hook putenv
 int putenv(char *string) {
+    ensure_orig();
     if (string && strncmp(string, "DYLD_", 5) == 0) return 0;
     if (string && strncmp(string, "SUBLIBRARYPATH=", 14) == 0) return 0;
-    return %orig;
+    return orig_putenv(string);
 }
-%end
+
+#pragma mark - ObjC hooks
 
 %hook NSFileManager
 
