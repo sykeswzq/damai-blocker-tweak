@@ -23,7 +23,6 @@ jobs:
         env:
           THEOS: $HOME/theos
         run: |
-          export THEOS=$HOME/theos
           make clean && make package
           ls -la packages/
 
