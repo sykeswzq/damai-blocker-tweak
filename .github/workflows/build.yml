@@ -1,0 +1,33 @@
+name: Build DamaiBlocker
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Theos
+        run: |
+          git clone --recurse-submodules https://github.com/theos/theos.git /opt/theos
+          echo "/opt/theos/bin" >> $GITHUB_PATH
+
+      - name: Install archiver
+        run: brew install archiver
+
+      - name: Build deb
+        working-directory: Packages/com.damai.blocker
+        run: |
+          export THEOS=/opt/theos
+          make clean
+          make package
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: DamaiBlocker.deb
+          path: |
+            Packages/com.damai.blocker/packages/*.deb
+          if-no-files-found: error
