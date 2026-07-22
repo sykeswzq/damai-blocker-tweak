@@ -14,22 +14,17 @@ jobs:
           clean: true
           persist-credentials: false
 
-      - name: Fix line endings and debug
+      - name: Fix line endings
         working-directory: Packages/com.damai.blocker
         run: |
           python3 -c "import pathlib; [pathlib.Path(p).write_bytes(pathlib.Path(p).read_bytes().replace(b'', b'')) for p in ['Makefile','Tweak.x','DamaiBlocker.plist']]"
-          echo "=== cat -A Makefile ==="
           cat -A Makefile
-          echo "=== hexdump Makefile ==="
-          xxd Makefile | head -40
-          echo "=== Tweak.x CR count ==="
-          python3 -c "print(open('Tweak.x','rb').read().count(b''))"
+          xxd Makefile | head -20
 
       - name: Install Theos and tools
         run: |
           git clone --recursive https://github.com/theos/theos.git $HOME/theos
           brew install ldid
-          ls $HOME/theos/bin/
 
       - name: Build deb
         working-directory: Packages/com.damai.blocker
@@ -39,13 +34,11 @@ jobs:
         run: |
           export THEOS=$HOME/theos
           export THEOS_MAKE_PATH=$HOME/theos/makefiles
-          echo "=== Environment ==="
-          echo PWD=$PWD
-          echo THEOS=$THEOS
-          echo THEOS_MAKE_PATH=$THEOS_MAKE_PATH
-          echo "=== Check Makefile ==="
+          echo "PWD=$PWD"
+          echo "THEOS=$THEOS"
+          echo "THEOS_MAKE_PATH=$THEOS_MAKE_PATH"
           cat -A Makefile
-          xxd Makefile | head -40
+          xxd Makefile | head -20
           make clean && make package
           ls -la packages/ || echo "No packages dir!"
 
