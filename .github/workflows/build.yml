@@ -17,8 +17,7 @@ jobs:
       - name: Fix line endings
         working-directory: Packages/com.damai.blocker
         run: |
-          python3 -c "import pathlib; [pathlib.Path(p).write_bytes(pathlib.Path(p).read_bytes().replace(b'', b'')) for p in ['Makefile','Tweak.x','DamaiBlocker.plist']]"
-          python3 -c "print('CR counts:', open('Makefile','rb').read().count(b''), open('Tweak.x','rb').read().count(b''))"
+          python3 -c "import pathlib; [pathlib.Path(p).write_bytes(pathlib.Path(p).read_bytes().replace(b'\r', b'')) for p in ['Makefile','Tweak.x','DamaiBlocker.plist']]"
           head -20 Makefile
 
       - name: Install Theos and tools
@@ -34,20 +33,15 @@ jobs:
         run: |
           export THEOS=$HOME/theos
           export THEOS_MAKE_PATH=$HOME/theos/makefiles
-          echo "PWD=$PWD"
-          echo "THEOS=$THEOS"
-          head -20 Makefile
-          xxd Makefile | head -15
+          echo PWD=$PWD
+          echo THEOS=$THEOS
           make clean && make package
-          echo "=== Generated files ==="
-          find packages/ -name "*.deb" -o -name "*.ipsw" -o -name "*.dmg" 2>/dev/null || ls -la packages/ || echo "No packages dir!"
-          ls -R packages/ || echo "No packages!"
+          find packages/ -type f -name "*.deb"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: DamaiBlocker.deb
-          path: |
+          path:
             Packages/com.damai.blocker/packages/**/*.deb
-            Packages/com.damai.blocker/*.deb
           if-no-files-found: error
