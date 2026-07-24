@@ -1,0 +1,12 @@
+Package: com.damai.blocker
+Name: DamaiBlocker
+Version: 1.0.0
+Description: Bypass jailbreak detection for Damai ticketing app
+Maintainer: sykeswzq
+Author: sykeswzq
+Architecture: iphone-arm (arm64, arm64e)
+Section: Tweaks
+Depends:
+Replaces:
+Provides:
+InstallSize: 50000
